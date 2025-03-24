@@ -39,9 +39,26 @@ function App() {
 
   return (
     <>
-        <h1>Verify National ID Card</h1>
-        <input value={idCardNumber} placeholder={'Enter National ID Card Number'} maxLength={13} onChange={handleIdCardChange} />
-        {idCardNumber.length === 13 && (isValid ? <p>Valid</p> : <p>Invalid</p>)}
+        <header>
+            <h1>Verify National ID Card</h1>
+        </header>
+        <main>
+            <section>
+                <input
+                    id="idCardNumber"
+                    type="text"
+                    value={idCardNumber}
+                    placeholder="Enter National ID Card Number"
+                    maxLength={13}
+                    onChange={handleIdCardChange}
+                />
+                <p id="idCardStatus" className={isValid ? 'valid' : 'invalid'}>
+                    {idCardNumber.length === 13
+                        ? (isValid ? 'The ID card number is valid.' : 'The ID card number is invalid.')
+                        : 'Please enter a valid 13-digit ID card number.'}
+                </p>
+            </section>
+        </main>
     </>
   )
 }
