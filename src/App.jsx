@@ -39,9 +39,9 @@ function App() {
 
   return (
     <>
-        <h1>ตรวจสอบบัตรประชาชน</h1>
-        <input value={idCardNumber} placeholder={'กรอกเลขบัตรประชาชน'} maxLength={13} onChange={handleIdCardChange} />
-        {idCardNumber.length === 13 && (isValid ? <p>ถูก</p> : <p>ผิด</p>)}
+        <h1>Verify National ID Card</h1>
+        <input value={idCardNumber} placeholder={'Enter National ID Card Number'} maxLength={13} onChange={handleIdCardChange} />
+        {idCardNumber.length === 13 && (isValid ? <p>Valid</p> : <p>Invalid</p>)}
     </>
   )
 }
