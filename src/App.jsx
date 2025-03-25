@@ -32,7 +32,8 @@ function App() {
 
         let initial = 11;
         let remainder = sum%initial;
-        let checkDigit = initial - remainder;
+        // let checkDigit = initial - remainder;
+        let checkDigit = (initial - remainder) % 10;
 
         return Number(lastNumber) === checkDigit;
   }
