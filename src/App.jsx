@@ -1,11 +1,12 @@
 import './App.css'
 import {useState} from "react";
+import isValidIdCardNumber from "./utils/validateThaiId.js";
 
 function App() {
   const [idCardNumber, setIdCardNumber] = useState('');
   const [isValid, setValid] = useState(null);
 
-    function handleIdCardChange(e) {
+  function handleIdCardChange(e) {
         e.preventDefault();
         const newValue = e.target.value;
         setIdCardNumber(newValue);
@@ -16,27 +17,8 @@ function App() {
         } else {
             setValid(null);
         }
-    }
-
-  function isValidIdCardNumber(idNumber) {
-        let idLength = idNumber.toString().length;
-        let numForMultiple = idNumber.toString().substring(0, idLength - 1);
-        let lastNumber = String(idNumber).charAt(12);
-        let n = 13;
-        let sum = 0;
-
-        for (let i = 0; i < numForMultiple.length ; i++ ) {
-            sum = sum + (+numForMultiple.charAt(i) * (n));
-            n--;
-        }
-
-        let initial = 11;
-        let remainder = sum%initial;
-        // let checkDigit = initial - remainder;
-        let checkDigit = (initial - remainder) % 10;
-
-        return Number(lastNumber) === checkDigit;
   }
+
 
   return (
     <>
