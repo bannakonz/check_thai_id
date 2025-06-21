@@ -16,14 +16,14 @@
 .card {
   padding: 20px;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.5); // FFFFFF7F
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .card-image__id {
   width: 220px;
 }
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
   .card-image__id {
     width: auto;
   }
