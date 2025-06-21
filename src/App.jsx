@@ -41,24 +41,27 @@ function App() {
   return (
     <>
         <header>
-            <h1>Verify National ID Card</h1>
+            <h1 className="title">ตรวจสอบเลขบัตรประชาชน ง่ายและรวดเร็ว</h1>
+            <p className="description">ระบบของเราไม่มีการบันทึกหมายเลขบัตรประชาชน</p>
         </header>
         <main>
-            <section>
-                <input
-                    id="idCardNumber"
-                    type="text"
-                    value={idCardNumber}
-                    placeholder="Enter National ID Card Number"
-                    maxLength={13}
-                    onChange={handleIdCardChange}
-                />
-                <p id="idCardStatus" className={isValid ? 'valid' : 'invalid'}>
-                    {idCardNumber.length === 13
-                        ? (isValid ? 'The ID card number is valid.' : 'The ID card number is invalid.')
-                        : 'Please enter a valid 13-digit ID card number.'}
-                </p>
-            </section>
+                <div className="card">
+                    <img className="card-image__id" src="/id-card-thai.svg" alt="id-card-image" />
+                    <input
+                        id="idCardNumber"
+                        type="text"
+                        value={idCardNumber}
+                        placeholder="เลขบัตรประชาชน"
+                        maxLength={13}
+                        onChange={handleIdCardChange}
+                    />
+                    <p id="idCardStatus" className={isValid ? 'valid' : 'invalid'}>
+                        {idCardNumber.length === 13
+                            ? (isValid ? 'หมายเลขบัตรประชาชนถูกต้อง' : 'หมายเลขบัตรประชาชนไม่ถูกต้อง')
+                            : ''}
+                    </p>
+                </div>
+
         </main>
     </>
   )
