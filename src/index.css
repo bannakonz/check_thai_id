@@ -8,7 +8,7 @@
   /*color-scheme: light dark;*/
   color: #ffffff;
   background-image: linear-gradient(#00498F, #B0C9E1);
-
+  background-repeat: no-repeat;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
